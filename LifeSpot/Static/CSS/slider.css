@@ -1,0 +1,15 @@
+﻿.itc-slider-item {
+    flex: 0 0 auto;
+    width: 100%;
+}
+
+@media (min-width: 1200px) {
+    .itc-slider-item {
+        flex: 0 0 33.3333333333%;
+    }
+}
+
+.itc-slider-items {
+    --gap: 1rem;
+    gap: var(--gap);
+}
