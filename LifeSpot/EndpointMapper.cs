@@ -99,7 +99,7 @@ public static class EndpointMapper
     {
         var imgFiles = new[]
         {
-            "london.jpg", "ny,jpg", "spb.jpg"
+            "london.jpg", "ny.jpg", "spb.jpg"
         };
 
         foreach (var imgFile in imgFiles)
