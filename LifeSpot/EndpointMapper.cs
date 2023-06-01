@@ -15,7 +15,7 @@ public static class EndpointMapper
     /// </summary>
     public static void MapCss(this IEndpointRouteBuilder builder)
     {
-        var cssFiles = new[] { "index.css", "slider.css" };
+        var cssFiles = new[] { "index.css" };
 
         foreach (var fileName in cssFiles)
         {
@@ -34,7 +34,7 @@ public static class EndpointMapper
     /// </summary>
     public static void MapJs(this IEndpointRouteBuilder builder)
     {
-        var jsFiles = new[] { "index.js", "testing.js", "about.js", "slider.js" };
+        var jsFiles = new[] { "index.js", "testing.js", "about.js" };
 
         foreach (var fileName in jsFiles)
         {
@@ -104,7 +104,7 @@ public static class EndpointMapper
 
         foreach (var imgFile in imgFiles)
         {
-            builder.MapGet($"/SliderImg{imgFile}", async context =>
+            builder.MapGet($"/SliderImg/{imgFile}", async context =>
             {
                 var imgPath = Path.Combine(Directory.GetCurrentDirectory(), "SliderImg", imgFile);
                 var img = await File.ReadAllBytesAsync(imgPath);

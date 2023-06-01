@@ -80,3 +80,45 @@ function addLike(id) {
     // Обновим текст элемента
     element.innerText = array.join(' ')
 }
+
+
+let currentImage = {
+    index: 0,
+    secondRound: false
+};
+
+function showImageBlock(id) {
+    let images = document.getElementsByClassName("itc-slider__item");
+    for (let image of images) {
+        image.style.display = 'none';
+    }
+    if (id >= images.length) {
+        images[0].style.display = 'block';
+        currentImage.secondRound = true;
+    }
+    if (id >= 0 && id < images.length) {
+        images[id].style.display = 'block';
+        currentImage.secondRound = false;
+    }
+    if (id < 0) {
+        images[2].style.display = 'block';
+        currentImage.secondRound = true;
+    }
+}
+
+function next(currentIndex) {
+    //console.log('Next');
+    showImageBlock(currentIndex + 1);
+    if (currentImage.secondRound)
+        currentImage.index = 0;
+    else
+        currentImage.index++;
+}
+function previous(currentIndex) {
+    //console.log('Previous');
+    showImageBlock(currentIndex - 1);
+    if (currentImage.secondRound)
+        currentImage.index = 2;
+    else
+        currentImage.index--;
+} r = ItcSlider.getInstance(sliderElem);

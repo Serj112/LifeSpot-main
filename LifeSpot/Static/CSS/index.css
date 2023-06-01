@@ -100,3 +100,35 @@ input {
 input:focus {
     border: 2px solid dimgrey;
 }
+
+.itc-slider-item {
+    flex: 0 0 auto;
+    width: 100%;
+}
+
+@media (min-width: 1200px) {
+    .itc-slider-item {
+        flex: 0 0 33.3333333333%;
+    }
+}
+
+.itc-slider-items {
+    --gap: 1rem;
+    gap: var(--gap);
+}
+
+.itc-slider_btn {
+    position: absolute;
+    background-color: transparent;
+    /*border:none;*/
+    font-size: 3em;
+    color: red;
+    cursor: pointer;
+    top: 45%;
+    left: 0%;
+    z-index: 3;
+}
+
+#btnRight {
+    left: 549px;
+}
